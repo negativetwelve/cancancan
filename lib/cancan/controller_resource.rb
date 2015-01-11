@@ -160,6 +160,7 @@ module CanCan
 
     def resource_instance=(instance)
       @controller.instance_variable_set("@#{instance_name}", instance)
+      @controller.instance_variable_set("@resource", instance)
     end
 
     def resource_instance
@@ -168,6 +169,7 @@ module CanCan
 
     def collection_instance=(instance)
       @controller.instance_variable_set("@#{instance_name.to_s.pluralize}", instance)
+      @controller.instance_variable_set("@resources", instance)
     end
 
     def collection_instance
