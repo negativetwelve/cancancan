@@ -168,7 +168,7 @@ module CanCan
     end
 
     def collection_instance=(instance)
-      @controller.instance_variable_set("@#{instance_name}", nil)
+      @controller.instance_variable_set("@resource", nil)
       @controller.instance_variable_set("@#{instance_name.to_s.pluralize}", instance)
       @controller.instance_variable_set("@resources", instance)
     end
